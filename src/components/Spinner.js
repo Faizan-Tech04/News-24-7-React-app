@@ -4,7 +4,7 @@
       render() {
         return (
           <div className="text-center" style={{margin:"20px"}}>
-            <img src={loading} alt="loading..." />
+            <img className= "my-3" src={loading} alt="loading..." />
           </div>
         )
       }
