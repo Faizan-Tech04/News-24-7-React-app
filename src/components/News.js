@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
@@ -10,8 +10,6 @@ const News = (props) => {
   const [loading, setLoading] = React.useState(true);
   const [page, setPage] = React.useState(1);
   const [totalResults, setTotalResults] = React.useState(0);
-
-  
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -26,16 +24,18 @@ const News = (props) => {
     let parsedData = await data.json();
 
     console.log(parsedData);
-    setArticles(parsedData.articles);
-    setTotalResults(parsedData.totalResults);
+    console.log("API KEY:", props.apiKey);
+    console.log("ARTICLES:", parsedData.articles);
+    setArticles(parsedData.articles || []);
+    setTotalResults(parsedData.totalResults || 0);
     setLoading(false);
     props.setProgress(100);
   };
-useEffect(() => {
-  document.title = `${capitalizeFirstLetter(props.category)} - News24*7`;
-  updateNews();
-  // eslint-disable-next-line
-}, []);
+  useEffect(() => {
+    document.title = `${capitalizeFirstLetter(props.category)} - News24*7`;
+    updateNews();
+    // eslint-disable-next-line
+  }, []);
 
   // let url =
   //   `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=ccea233db7e64d56a74ba642912bd6c7&page=1&pageSize=${props.pageSize}`;
@@ -50,57 +50,55 @@ useEffect(() => {
   //   loading: false,
   // });
 
- 
-    // console.log("Previous");
-    // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=ccea233db7e64d56a74ba642912bd6c7&page=${state.page - 1} &pageSize=${props.pageSize}`;
-    // setState({ loading: true });
-    // let data = await fetch(url);
-    // let parsedData = await data.json();
-    // console.log(parsedData);
-    // setState({
-    //   page: state.page - 1,
-    //   articles: parsedData.articles,
-    //   loading: false,
-    // });
+  // console.log("Previous");
+  // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=ccea233db7e64d56a74ba642912bd6c7&page=${state.page - 1} &pageSize=${props.pageSize}`;
+  // setState({ loading: true });
+  // let data = await fetch(url);
+  // let parsedData = await data.json();
+  // console.log(parsedData);
+  // setState({
+  //   page: state.page - 1,
+  //   articles: parsedData.articles,
+  //   loading: false,
+  // });
 
-    
+  // if (
+  //   !(
+  //    state.page + 1 >
+  //     Math.ceil(state.totalResults /props.pageSize)
+  //   )
+  // ) {
+  //   let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=ccea233db7e64d56a74ba642912bd6c7&page=${state.page + 1} &pageSize=${props.pageSize}`;
 
-  
-    // if (
-    //   !(
-    //    state.page + 1 >
-    //     Math.ceil(state.totalResults /props.pageSize)
-    //   )
-    // ) {
-    //   let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=ccea233db7e64d56a74ba642912bd6c7&page=${state.page + 1} &pageSize=${props.pageSize}`;
+  //   setState({ loading: true });
+  //   let data = await fetch(url);
+  //   let parsedData = await data.json();
+  //   setState({ loading: false });
+  //   setState({
+  //     page: state.page + 1,
+  //     articles: parsedData.articles,
+  //   });
 
-    //   setState({ loading: true });
-    //   let data = await fetch(url);
-    //   let parsedData = await data.json();
-    //   setState({ loading: false });
-    //   setState({
-    //     page: state.page + 1,
-    //     articles: parsedData.articles,
-    //   });
-
-    // }
-   
+  // }
 
   const fetchMoreData = async () => {
     setPage(page + 1);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`;
     console.log(url);
     let data = await fetch(url);
     let parsedData = await data.json();
-    setArticles(articles.concat(parsedData.articles));
+    setArticles(articles.concat(parsedData.articles || []));
     setTotalResults(parsedData.totalResults);
   };
 
   console.log("render");
   return (
     <>
-      <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>
-      News24*7 - Top {capitalizeFirstLetter(props.category)} Headlines
+      <h1
+        className="text-center"
+        style={{ margin: "35px 0px", marginTop: "90px" }}
+      >
+        News24*7 - Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>
 
       {loading && <Spinner />}
