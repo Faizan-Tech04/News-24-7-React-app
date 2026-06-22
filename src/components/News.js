@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
@@ -31,12 +31,11 @@ const News = (props) => {
     setLoading(false);
     props.setProgress(100);
   };
-
-  useEffect(() => {
-     document.title = `${capitalizeFirstLetter(props.category)} - News24*7`;
-    updateNews();
-    
-  }, []);
+useEffect(() => {
+  document.title = `${capitalizeFirstLetter(props.category)} - News24*7`;
+  updateNews();
+  // eslint-disable-next-line
+}, []);
 
   // let url =
   //   `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=ccea233db7e64d56a74ba642912bd6c7&page=1&pageSize=${props.pageSize}`;
