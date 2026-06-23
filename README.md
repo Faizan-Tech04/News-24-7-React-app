@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+News24*7 - React News Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive news web application built using React.js that provides the latest news articles across multiple categories such as Business, Entertainment, Health, Science, Sports, and Technology.
 
-## Available Scripts
+🚀 Live Demo
 
-In the project directory, you can run:
+https://news-24-7-react-app.vercel.app/
 
-### `npm start`
+📂 GitHub Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://github.com/Faizan-Tech04/News-24-7-React-app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✨ Features
 
-### `npm test`
+- Latest news updates in real-time
+- Category-wise news filtering
+- Responsive design for mobile, tablet, and desktop
+- Dynamic news fetching using NewsData.io API
+- External article links with "Read More" functionality
+- Clean and user-friendly interface
+- Loading spinner while fetching news
+- Deployed on Vercel
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🛠️ Tech Stack
 
-### `npm run build`
+Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React.js
+- JavaScript (ES6+)
+- Bootstrap 5
+- HTML
+- CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- NewsData.io API
 
-### `npm run eject`
+Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Vercel
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+⚙️ Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone the repository:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+git clone https://github.com/Faizan-Tech04/News-24-7-React-app.git
 
-## Learn More
+Navigate to project folder:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd News-24-7-React-app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install dependencies:
 
-### Code Splitting
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Create a .env file and add your API key:
 
-### Analyzing the Bundle Size
+REACT_APP_NEWS_API=YOUR_API_KEY
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Start development server:
 
-### Making a Progressive Web App
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📁 Project Structure
 
-### Advanced Configuration
+src/
+ ├── components/
+ │   ├── Navbar.js
+ │   ├── News.js
+ │   ├── NewsItem.js
+ │   └── Spinner.js
+ │
+ ├── App.js
+ ├── App.css
+ └── index.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🎯 Learning Outcomes
 
-### Deployment
+Through this project I learned:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- React Functional Components
+- React Hooks (useState, useEffect)
+- API Integration
+- Environment Variables
+- Conditional Rendering
+- Component-Based Architecture
+- Deployment using Vercel
+- Git & GitHub Workflow
 
-### `npm run build` fails to minify
+👨‍💻 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Faizan Chougule
+
+- GitHub: https://github.com/Faizan-Tech04
+- LinkedIn: https://www.linkedin.com/in/faizan-chougule
+
+📄 License
+
+This project is open source and available under the MIT License.
