@@ -7,8 +7,8 @@ import PropTypes from "prop-types";
 const News = (props) => {
   const [articles, setArticles] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
-  const [page, setPage] = React.useState(1);
-  const [totalResults, setTotalResults] = React.useState(0);
+  
+  const [, setTotalResults] = React.useState(0);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -77,15 +77,15 @@ const News = (props) => {
 
   // }
 
-  const fetchMoreData = async () => {
-    setPage(page + 1);
-    const url = `https://newsdata.io/api/1/latest?apikey=${props.apiKey}&country=in&language=en&category=${props.category}`;
-    console.log(url);
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    setArticles(articles.concat(parsedData.results || []));
-    setTotalResults(parsedData.totalResults);
-  };
+  // const fetchMoreData = async () => {
+  //   setPage(page + 1);
+  //   const url = `https://newsdata.io/api/1/latest?apikey=${props.apiKey}&country=in&language=en&category=${props.category}`;
+  //   console.log(url);
+  //   let data = await fetch(url);
+  //   let parsedData = await data.json();
+  //   setArticles(articles.concat(parsedData.results || []));
+  //   setTotalResults(parsedData.totalResults);
+  // };
 
   return (
     <>
