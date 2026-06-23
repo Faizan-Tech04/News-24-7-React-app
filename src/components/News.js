@@ -22,7 +22,6 @@ const News = (props) => {
     let data = await fetch(url);
     let parsedData = await data.json();
 
-    
     setArticles(parsedData.results || []);
     setTotalResults(parsedData.totalResults || parsedData.results?.length || 0);
     setLoading(false);
@@ -88,16 +87,16 @@ const News = (props) => {
     setTotalResults(parsedData.totalResults);
   };
 
-
   return (
     <>
       <h1
         className="text-center"
         style={{ margin: "35px 0px", marginTop: "90px" }}
       >
-        News24*7 - Top {capitalizeFirstLetter(props.category)} Headlines
+        {props.category === "top"
+          ? "News24*7 - Top Headlines"
+          : `News24*7 - ${capitalizeFirstLetter(props.category)} Headlines`}
       </h1>
-
       {loading && <Spinner />}
 
       <div className="container">
@@ -112,7 +111,7 @@ const News = (props) => {
                     imageUrl={
                       element.image_url
                         ? element.image_url
-                        : "https://via.placeholder.com/300x200"
+                        : "https://dummyimage.com/300x200/cccccc/000000&text=No+Image"
                     }
                     newsUrl={element.link}
                     author={element.creator ? element.creator[0] : "Unknown"}

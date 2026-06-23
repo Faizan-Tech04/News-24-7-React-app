@@ -16,13 +16,14 @@ const NewsItem = (props) => {
           <span className="badge rounded-pill bg-danger">{source}</span>
         </div>
         <img
-          src={
-            !imageUrl
-              ? "https://cdn.sanity.io/images/s3y3vcno/production/62f409ba891aac91753fc2f4043b8f9f6d271891-1500x1029.jpg?auto=format&w=960&h=540&crop=focalpoint&fit=clip&q=75&fm=jpg"
-              : imageUrl
-          }
+          src={imageUrl}
           className="card-img-top"
-          alt="..."
+          alt="news"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://dummyimage.com/300x200/cccccc/000000&text=No+Image";
+          }}
         />
         <div className="card-body">
           <h5 className="card-title">{title} </h5>

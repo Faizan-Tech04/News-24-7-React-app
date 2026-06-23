@@ -59,16 +59,6 @@ const App = () => {
             />
           </Route>
 
-          <Route exact path="/general">
-            <News
-              setProgress={setProgress}
-              apiKey={apiKey}
-              key="top"
-              pageSize={pageSize}
-              country="in"
-              category="top"
-            />
-          </Route>
 
           <Route exact path="/health">
             <News
