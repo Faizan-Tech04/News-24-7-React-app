@@ -30,10 +30,10 @@ const App = () => {
             <News
               setProgress={setProgress}
               apiKey={apiKey}
-              key="general"
+              key="top"
               pageSize={pageSize}
-              country="us"
-              category="general"
+              country="in"
+              category="top"
             />
           </Route>
 
@@ -43,7 +43,7 @@ const App = () => {
               apiKey={apiKey}
               key="business"
               pageSize={pageSize}
-              country="us"
+              country="in"
               category="business"
             />
           </Route>
@@ -54,7 +54,7 @@ const App = () => {
               apiKey={apiKey}
               key="entertainment"
               pageSize={pageSize}
-              country="us"
+              country="in"
               category="entertainment"
             />
           </Route>
@@ -63,10 +63,10 @@ const App = () => {
             <News
               setProgress={setProgress}
               apiKey={apiKey}
-              key="general"
+              key="top"
               pageSize={pageSize}
-              country="us"
-              category="general"
+              country="in"
+              category="top"
             />
           </Route>
 
@@ -76,7 +76,7 @@ const App = () => {
               apiKey={apiKey}
               key="health"
               pageSize={pageSize}
-              country="us"
+              country="in"
               category="health"
             />
           </Route>
@@ -87,7 +87,7 @@ const App = () => {
               apiKey={apiKey}
               key="science"
               pageSize={pageSize}
-              country="us"
+              country="in"
               category="science"
             />
           </Route>
@@ -98,7 +98,7 @@ const App = () => {
               apiKey={apiKey}
               key="sports"
               pageSize={pageSize}
-              country="us"
+              country="in"
               category="sports"
             />
           </Route>
@@ -109,7 +109,7 @@ const App = () => {
               apiKey={apiKey}
               key="technology"
               pageSize={pageSize}
-              country="us"
+              country="in"
               category="technology"
             />
           </Route>
